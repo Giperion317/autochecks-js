@@ -646,7 +646,7 @@
     
 //   },
 //   removePotion(potionName) {
-//     const { potions } = this; 
+//     const { potions } = this;
 
 //     for (let i = 0; i < potions.length; i += 1) {
 //       const {name} = potions[i];
@@ -671,11 +671,11 @@
 //   // Change code above this line
   
 // };
-atTheOldToad.addPotion({ name: "Speed potion", price: 460 })
+// atTheOldToad.addPotion({ name: "Speed potion", price: 460 })
 // atTheOldToad.addPotion({ name: "Invisibility", price: 620 })
 // atTheOldToad.addPotion({ name: "Power potion", price: 270 })
 
-console.table(atTheOldToad.getPotions())
+// console.table(atTheOldToad.getPotions())
 
 
 // atTheOldToad.removePotion("Dragon breath")
@@ -687,3 +687,239 @@ console.table(atTheOldToad.getPotions())
 // atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion")
 
 // console.table(atTheOldToad.getPotions())
+
+
+// Модуль 4
+
+// =============Task 13
+
+// Функция changeEven(numbers, value) принимает массив чисел numbers и обновляет каждый элемент, значение которого это чётное число, добавляя к нему значение параметра value.
+
+// Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями.
+
+// Объявлена функция changeEven(numbers, value)
+// Функция changeEven не изменяет значение параметра numbers
+// Вызов changeEven([1, 2, 3, 4, 5], 10) возвращает новый массив [1, 12, 3, 14, 5]
+// Вызов changeEven([2, 8, 3, 7, 4, 6], 10) возвращает новый массив [12, 18, 3, 7, 14, 16]
+// Вызов changeEven([17, 24, 68, 31, 42], 100) возвращает новый массив [17, 124, 168, 31, 142]
+// Вызов changeEven([44, 13, 81, 92, 36, 54], 100) возвращает новый массив [144, 13, 81, 192, 136, 154]
+// Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//     let newNumbers = [];
+   
+//     numbers.forEach((number) => {
+        
+//       if (number % 2 === 0) {
+//       newNumbers.push(number + value);
+//       } else {
+//          newNumbers.push(number);
+//     }
+//   })
+    
+//     return newNumbers;
+//   // Change code above this line
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10))
+
+
+// =========Task 22
+
+
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+    }
+]
+  
+//   // Change code below this line
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter(user => user.eyeColor === color) }
+// // Change code above this line
+
+// console.log(getUsersWithEyeColor(users, "brown"))
+
+
+// ===== Task 25
+
+// Change code below this line
+// const getFriends = (users) => {
+//     const allFriends = users.flatMap(user => user.friends)
+//     console.log(allFriends)
+//     const uniqueFriends = allFriends.filter((friend, index, array) => array.indexOf(friend) === index)
+//     return uniqueFriends;
+// };
+// // Change code above this line
+// console.log(getFriends(users))
+
+
+// ================ЗАНЯТИЕ С МЕНТОРОМ=======================
+
+// task 1
+
+//Напиши скрипт, который для объекта user,
+//последовательно:
+//1 добавит поле mood со значением 'happy'
+//2 заменит hobby на 'skydiving'
+//3 заменит значение premium на false
+//4 выводит содержимое объекта users в фортмате
+//ключ:значение используя Object.keys() и for...of
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+
+// user.mood = 'happy';
+// user.hobby = 'skydiving';
+// user.premium = false;
+
+// for (const key of Object.keys(user)) {
+//     console.log(`${key}: ${user[key]}`);
+// }
+
+
+// ===========task2
+
+//У нас есть объект, в котором храняться зарплаты
+//нашей команды
+//Напишите код для сумирования всех зарплат и
+//сохраните его результат в переменной sum.
+//Если объект salaries пуст, то результат должен быть 0
+
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+
+// const totalSalaries = (salaries) => {
+//     console.log(salaries)
+//     let totall = 0;
+//     for (const value of Object.values(salaries)) {
+//         totall += value
+//     }
+//     return totall
+// }
+// console.log(totalSalaries(salaries))
+
+// ============task3
+
+//Создайте объект calculator с тремя методами
+//read(a, b) - принимает два аргумента и сохраняет их
+//как свойства объекта
+//sum() возвращает сумму сохраненных значений
+//mult() перемножает сохраненные значения и возвращает результат
+
+// const calculator = {
+//     read(a, b){
+//         this.value1 = a;
+//         this.value2 = b;
+// },
+//     sum(){
+//     return this.value1 + this.value2;
+// },
+//     mult(){
+//     return this.value1 * this.value2;
+//     },
+// }
+
+// calculator.read(3,5)
+// console.log(calculator.sum())
+// console.log(calculator.mult())
+
+//Напишите функцию updateObject, которая принимает объект и возвращает
+//новый объект без указанного параметра
+//Ожидаемый результат ({a: 1. b: 2}, 'b') => {a: 1}
+
+// const updateObject = (object, param) => {
+//     const newObject = { ...object };
+//     delete newObject[param];
+//     return newObject;
+// };
+
+// console.log(updateObject({a: 1, b: 2}, 'b'))
+
+//Напишите функцию, которая принимает как параметр объект
+//и формирует объекты в новом массиве в формате [key, value]
+
+// const user = {
+//   name: "John",
+//   surName: "Stones",
+//   age: 20,
+//   hobby: "tenis",
+//   haveCar: true,
+//   merried: false,
+// };
+
+// const usersChange = (object) => {
+
+//     const objectKaysValues = Object.entries(object);
+//     return objectKaysValues;
+// }
+
+// console.log(usersChange(user))
